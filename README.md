@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# OpenAI Realtime API Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates a real-time interaction with OpenAI's GPT-4o model using WebSockets. It consists of a React frontend and a Node.js backend that connects to OpenAI's Realtime API.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project showcases a real-time chat application that interacts with OpenAI's GPT-4o model. Users can send audio messages, which are processed and responded to by the AI in both text and audio formats. The application is built with a React frontend and a Node.js backend, utilizing WebSockets for real-time communication.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Real-time Communication**: Uses WebSockets to maintain a persistent connection between the client and server.
+- **Audio Processing**: Records audio from the user's microphone, processes it, and sends it to the backend.
+- **AI Interaction**: Connects to OpenAI's Realtime API to receive AI-generated responses in text and audio.
+- **Automatic Audio Playback**: Plays audio responses automatically using a hidden audio player.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js and npm installed on your machine.
+- A valid OpenAI API key.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/openai-realtime-api-demo.git
+   cd openai-realtime-api-demo
+   ```
 
-### `npm run eject`
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Set up environment variables**:
+   Create a `.env` file in the root directory and add your OpenAI API key:
+   ```plaintext
+   OPENAI_API_KEY=your_openai_api_key
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Start the backend server**:
+   ```bash
+   node backend/server.js
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. **Start the frontend**:
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+- Open your browser and navigate to `http://localhost:3000`.
+- Click the "Start Recording" button to begin recording your message.
+- Click "Stop Recording" to send the message to the AI.
+- The AI's response will be displayed in text and played back in audio.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **src/App.js**: The main React component handling UI and WebSocket communication.
+- **backend/server.js**: Node.js server that connects to OpenAI's Realtime API and handles WebSocket communication with the client.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
